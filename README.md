@@ -1,9 +1,4 @@
-# mg4gpu-sycl
-SYCL code generation plugin for MadGraph5_aMC@NLO
-
-`git clone -b gpucpp https://github.com/mg5amcnlo/mg5amcnlo.git ${MG5AMC_HOME}; cd ${MG5AMC_HOME}; git checkout 6d2182cc1`
-
-# `mg4gpu-sycl`: A MadGraph5_aMC@NLO Plugin for GPU Acceleration Using the SYCL Portability Framework
+# mg4gpu-sycl: A MadGraph5_aMC@NLO Plugin for GPU Acceleration Using the SYCL Portability Framework
 
 ## Introduction
 
@@ -14,7 +9,7 @@ SYCL code generation plugin for MadGraph5_aMC@NLO
 To use this plugin, you will need to have the following dependencies installed:
 
 - Python 3.x
-- MadGraph5_aMC@NLO
+- MadGraph5_aMC@NLO `git clone -b gpucpp https://github.com/mg5amcnlo/mg5amcnlo.git ${MG5AMC_HOME}; cd ${MG5AMC_HOME}; git checkout 6d2182cc1`
 - C++ compiler
 - SYCL compiler
 
@@ -28,5 +23,5 @@ Once you have installed the dependencies, you can install the plugin by followin
 To use this plugin, follow these steps:
 
 1. Navigate to the `src` directory of the `mg4gpu-sycl` repository.
-2. Execute the bash script `generateAndCompare.sh process_name`, where `process_name` is the name of the process you want to test. This script generates two versions of MadGraph: one version tests the matrix element calculation kernels, while the other version produces the full physics workload. The content of the generated code is placed in `procs/process_name.sa` for matrix element calculation kernels and in `procs/process_name.mad` for full physics workload in the `mg4gpu-sycl` directory.
+2. Execute the bash script `generateAndCompare.sh process_name [--mad]`, where `process_name` is the name of the process you want to test. This script generates two versions of MadGraph: one version tests the matrix element calculation kernels, while the other version produces the full physics workload. The content of the generated code is placed in `mg4gpu-sycl/procs/process_name.sa` for kernel performance testing and in `mg4gpu-sycl/procs/process_name.mad` for running the full physics workload. If you want to generate code for full physics workload, add `--mad` as an optional argument.
 3. Compile and run the generated code on a GPU.
