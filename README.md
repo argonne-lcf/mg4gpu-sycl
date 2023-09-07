@@ -11,8 +11,7 @@ To use this plugin, you will need to have the following dependencies installed:
 - Python 3.x
 - MadGraph5_aMC@NLO
 - `gfortran >= 10.2`
-- C++ compiler
-- SYCL compiler
+- oneAPI DPC++ compiler (or other SYCL implementation)
 
 ### Installing MadGraph5_aMC@NLO
 
@@ -30,6 +29,11 @@ git checkout 6d2182cc1
 export MG5AMC_HOME=/path/to/mg5amcnlo
 ```
 Make sure to replace `/path/to/mg5amcnlo` with the actual path to your `mg5amcnlo` directory. Note: Executing the above line will add the `MG5AMC_HOME` environment variable to your current environment.
+
+### Installing oneAPI DPC++ compiler
+
+1. Go to the following URL: https://github.com/intel/llvm/blob/sycl/sycl/doc/GetStartedGuide.md
+2. Follow the instructions provided in the "Getting Started with oneAPI DPC++" guide to install the oneAPI DPC++ compiler.
 
 ### Installing mg4gpu-sycl
 Once you have installed the dependencies, you can install the plugin by the following step:
