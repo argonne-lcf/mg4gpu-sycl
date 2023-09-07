@@ -29,10 +29,10 @@ git checkout 6d2182cc1
 ```
 export MG5AMC_HOME=/path/to/mg5amcnlo
 ```
-Make sure to replace `/path/to/mg5amcnlo` with the actual path to your `mg5amcnlo` directory.
+Make sure to replace `/path/to/mg5amcnlo` with the actual path to your `mg5amcnlo` directory. Note: Executing the above line will add the `MG5AMC_HOME` environment variable to your current environment.
 
-
-Once you have installed the dependencies, you can install the plugin by following these steps:
+### Installing mg4gpu-sycl
+Once you have installed the dependencies, you can install the plugin by the following step:
 
 1. Clone the repository to your local machine.
 ```
