@@ -9,7 +9,7 @@
 To use this plugin, you will need to have the following dependencies installed:
 
 - Python 3.x
-- MadGraph5_aMC@NLO `git clone -b gpucpp https://github.com/mg5amcnlo/mg5amcnlo.git ${MG5AMC_HOME}; cd ${MG5AMC_HOME}; git checkout 6d2182cc1`
+- MadGraph5_aMC@NLO
 - `gfortran >= 10.2`
 - C++ compiler
 - SYCL compiler
