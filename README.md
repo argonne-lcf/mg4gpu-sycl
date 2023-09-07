@@ -10,13 +10,34 @@ To use this plugin, you will need to have the following dependencies installed:
 
 - Python 3.x
 - MadGraph5_aMC@NLO `git clone -b gpucpp https://github.com/mg5amcnlo/mg5amcnlo.git ${MG5AMC_HOME}; cd ${MG5AMC_HOME}; git checkout 6d2182cc1`
+- `gfortran >= 10.2`
 - C++ compiler
 - SYCL compiler
+
+### Installing MadGraph5_aMC@NLO
+
+1. Clone the `mg5amcnlo` repository from GitHub using the following command:
+```
+git clone https://github.com/mg5amcnlo/mg5amcnlo.git
+```
+2. Checkout the `gpucpp` branch at commit `6d2182cc1` using the following command:
+```
+cd mg5amcnlo
+git checkout 6d2182cc1
+```
+3. Export the `mg5amcnlo` directory to the `MG5AMC_HOME` environment variable by adding the following line to your `.bashrc` or `.bash_profile` file:
+```
+export MG5AMC_HOME=/path/to/mg5amcnlo
+```
+Make sure to replace `/path/to/mg5amcnlo` with the actual path to your `mg5amcnlo` directory.
+
 
 Once you have installed the dependencies, you can install the plugin by following these steps:
 
 1. Clone the repository to your local machine.
-2. Run the `setup.py` script to install the plugin.
+```
+git clone https://github.com/argonne-lcf/mg4gpu-sycl.git
+```
 
 ## Usage
 
