@@ -102,3 +102,17 @@ To compile and run the full physics workload code, follow these steps:
     0 ! Use exact helicity sum per event
     1 ! Choose single-diagram enhancement for process
     ```
+
+### Optional Environment Variables
+
+The following optional environment variables can be set to modify the behavior of the compilation process:
+
+- `VECLVL`: Set this environment variable to a value greater than 1 to replace primitive data types in the code with SYCL vector types using appropriate scalar type and with `VECLVL` number of elements. Please note that `VECLVL` can only be set to 1, 2, 4, 8, or 16. The default value for `VECLVL` is 1.
+
+- `CXTYPE`: This environment variable can be set to modify the complex number library used in the MadGraph code. The following options are available:
+
+    - `std`: Uses the complex number implementation from the C++ standard library. This is the default value.
+    - `extras`: Uses a complex number implementation included with the generated code.
+    - `oneapi`: Uses a complex number implementation from Intel's oneAPI Math Kernel Library.
+    - `thrust`: Uses a complex number implementation from the Thrust parallel algorithms library.
+    - `syclcplx`: Uses a [complex number implementation developed at the Argonne Leadership Computing Facility](https://github.com/argonne-lcf/SyclCPLX). 
