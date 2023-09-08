@@ -58,10 +58,10 @@ To compile and run the kernel performance testing code, follow these steps:
 1. Navigate to the `SubProcesses` directory of the `process_name.sa` directory.
 2. Navigate to one of the subprocess directories named `P*`. The `*` character is used as a placeholder and represents the name of the subprocess you are interested in.
 3. Set the `SYCLFLAGS` environment variable to something appropriate for the device you wish to target. For example, when compiling for an NVIDIA A100 GPU, set it using:
-```
-export SYCLFLAGS="-fsycl -fsycl-targets=nvptx64-nvidia-cuda -Xcuda-ptxas --maxrregcount=255 -Xcuda-ptxas --verbose -Xsycl-target-backend --cuda-gpu-arch=sm_80"
-```
-Additional details and other compilation flags for targeting other devices can be found in the oneAPI DPC++ Users Manual located at https://github.com/intel/llvm/blob/sycl/sycl/doc/UsersManual.md.
+    ```
+    export SYCLFLAGS="-fsycl -fsycl-targets=nvptx64-nvidia-cuda -Xcuda-ptxas --maxrregcount=255 -Xcuda-ptxas --verbose -Xsycl-target-backend --cuda-gpu-arch=sm_80"
+    ```
+    Additional details and other compilation flags for targeting other devices can be found in the oneAPI DPC++ Users Manual located at https://github.com/intel/llvm/blob/sycl/sycl/doc/UsersManual.md.
 4. Run the following command to compile the kernel performance testing code:
 ```
 make -f sycl.mk build.d_inl0_hrd0/check.exe
@@ -80,10 +80,10 @@ To compile and run the full physics workload code, follow these steps:
 1. Navigate to the `SubProcesses` directory of the `process_name.mad` directory.
 2. Navigate to one of the subprocess directories named `P*`. The `*` character is used as a placeholder and represents the name of the subprocess you are interested in.
 3. Set the `SYCLFLAGS` environment variable to something appropriate for the device you wish to target. For example, when compiling for an NVIDIA A100 GPU, set it using:
-```
-export SYCLFLAGS="-fsycl -fsycl-targets=nvptx64-nvidia-cuda -Xcuda-ptxas --maxrregcount=255 -Xcuda-ptxas --verbose -Xsycl-target-backend --cuda-gpu-arch=sm_80"
-```
-Additional details and other compilation flags for targeting other devices can be found in the oneAPI DPC++ Users Manual located at https://github.com/intel/llvm/blob/sycl/sycl/doc/UsersManual.md.
+    ```
+    export SYCLFLAGS="-fsycl -fsycl-targets=nvptx64-nvidia-cuda -Xcuda-ptxas --maxrregcount=255 -Xcuda-ptxas --verbose -Xsycl-target-backend --cuda-gpu-arch=sm_80"
+    ```
+    Additional details and other compilation flags for targeting other devices can be found in the oneAPI DPC++ Users Manual located at https://github.com/intel/llvm/blob/sycl/sycl/doc/UsersManual.md.
 4. Run the following command to compile the full physics workload code:
 ```
 make build.d_inl0_hrd0/madevent_sycl
