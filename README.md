@@ -50,3 +50,45 @@ To use this plugin, follow these steps:
 1. Navigate to the `src` directory of the `mg4gpu-sycl` repository.
 2. Execute the bash script `generateAndCompare.sh [--mad] process_name`, where `process_name` is the name of the process you want to test. This script generates two versions of MadGraph: one version tests the matrix element calculation kernels, while the other version produces the full physics workload. The content of the generated code is placed in `mg4gpu-sycl/procs/process_name.sa` for kernel performance testing and in `mg4gpu-sycl/procs/process_name.mad` for running the full physics workload. If you want to generate code for full physics workloads, add `--mad` as an optional argument.
 3. Compile and run the generated code on a GPU.
+
+### Compiling and Running the Kernel Performance Testing Code
+
+To compile and run the kernel performance testing code, follow these steps:
+
+1. Navigate to the `SubProcesses` directory of the `process_name.sa` directory.
+2. Navigate to one of the subprocess directories named `P*`. The `*` character is used as a placeholder and represents the name of the subprocess you are interested in.
+3. Run the following command to compile the kernel performance testing code:
+```
+make -f sycl.mk build.d_inl0_hrd0/check.exe
+```
+4. Once the compilation is complete, run the following command to execute the kernel performance testing code:
+```
+./build.d_inl0_hrd0/check.exe
+```
+
+Note that executing the command `./build.d_inl0_hrd0/check.exe` outputs the usage instructions for the executable.
+
+### Compiling and Running the Full Physics Workload Code
+
+To compile and run the full physics workload code, follow these steps:
+
+1. Navigate to the `SubProcesses` directory of the `process_name.mad` directory.
+2. Navigate to one of the subprocess directories named `P*`. The `*` character is used as a placeholder and represents the name of the subprocess you are interested in.
+3. Run the following command to compile the full physics workload code:
+```
+make build.d_inl0_hrd0/madevent_sycl
+```
+4. Once the compilation is complete, run one of these commands to execute the full physics workload code:
+    * Execute `./build.d_inl0_hrd0/madevent_sycl` and provide additional input when prompted.
+    * Execute `./build.d_inl0_hrd0/madevent_sycl < madevent_input`, where `madevent_input` is an input file containing additional input for running the program. Here is an example `madevent_input` file that you can use with this command:
+
+    ```
+    1 ! Bridge mode to call cross compiled C++ SYCL code
+    16384 ! Number of events calculated per iteration 
+    163840 10 5 ! Number of events and max and min iterations
+    0.01 ! Precision level cutoff for early exit
+    0 ! Grid adjustment
+    1 ! Suppress amplitude and use single-diagram enhancement
+    0 ! Use exact helicity sum per event
+    1 ! Choose single-diagram enhancement for process
+    ```
