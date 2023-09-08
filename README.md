@@ -16,19 +16,19 @@ To use this plugin, you will need to have the following dependencies installed:
 ### Installing MadGraph5_aMC@NLO
 
 1. Clone the `mg5amcnlo` repository from GitHub using the following command:
-```
-git clone https://github.com/mg5amcnlo/mg5amcnlo.git
-```
+    ```
+    git clone https://github.com/mg5amcnlo/mg5amcnlo.git
+    ```
 2. Checkout the `gpucpp` branch at commit `6d2182cc1` using the following command:
-```
-cd mg5amcnlo
-git checkout 6d2182cc1
-```
+    ```
+    cd mg5amcnlo
+    git checkout 6d2182cc1
+    ```
 3. Export the `mg5amcnlo` directory to the `MG5AMC_HOME` environment variable by adding the following line to your `.bashrc` or `.bash_profile` file:
-```
-export MG5AMC_HOME=/path/to/mg5amcnlo
-```
-Make sure to replace `/path/to/mg5amcnlo` with the actual path to your `mg5amcnlo` directory. Note: Executing the above line will add the `MG5AMC_HOME` environment variable to your current environment.
+    ```
+    export MG5AMC_HOME=/path/to/mg5amcnlo
+    ```
+    Make sure to replace `/path/to/mg5amcnlo` with the actual path to your `mg5amcnlo` directory. Note: Executing the above line will add the `MG5AMC_HOME` environment variable to your current environment.
 
 ### Installing oneAPI DPC++ compiler
 
@@ -39,9 +39,9 @@ Make sure to replace `/path/to/mg5amcnlo` with the actual path to your `mg5amcnl
 Once you have installed the dependencies, you can install the plugin by the following step:
 
 1. Clone the repository to your local machine.
-```
-git clone https://github.com/argonne-lcf/mg4gpu-sycl.git
-```
+    ```
+    git clone https://github.com/argonne-lcf/mg4gpu-sycl.git
+    ```
 
 ## Usage
 
@@ -63,15 +63,15 @@ To compile and run the kernel performance testing code, follow these steps:
     ```
     Additional details and other compilation flags for targeting other devices can be found in the oneAPI DPC++ Users Manual located at https://github.com/intel/llvm/blob/sycl/sycl/doc/UsersManual.md.
 4. Run the following command to compile the kernel performance testing code:
-```
-make -f sycl.mk build.d_inl0_hrd0/check.exe
-```
+    ```
+    make -f sycl.mk build.d_inl0_hrd0/check.exe
+    ```
 5. Once the compilation is complete, run the following command to execute the kernel performance testing code:
-```
-./build.d_inl0_hrd0/check.exe
-```
+    ```
+    ./build.d_inl0_hrd0/check.exe
+    ```
 
-Note that executing the command `./build.d_inl0_hrd0/check.exe` outputs the usage instructions for the executable.
+    Note that executing the command `./build.d_inl0_hrd0/check.exe` outputs the usage instructions for the executable.
 
 ### Compiling and Running the Full Physics Workload Code
 
@@ -85,9 +85,9 @@ To compile and run the full physics workload code, follow these steps:
     ```
     Additional details and other compilation flags for targeting other devices can be found in the oneAPI DPC++ Users Manual located at https://github.com/intel/llvm/blob/sycl/sycl/doc/UsersManual.md.
 4. Run the following command to compile the full physics workload code:
-```
-make build.d_inl0_hrd0/madevent_sycl
-```
+    ```
+    make build.d_inl0_hrd0/madevent_sycl
+    ```
 5. Once the compilation is complete, run one of these commands to execute the full physics workload code:
     * Execute `./build.d_inl0_hrd0/madevent_sycl` and provide additional input when prompted.
     * Execute `./build.d_inl0_hrd0/madevent_sycl < madevent_input`, where `madevent_input` is an input file containing additional input for running the program. Here is an example `madevent_input` file that you can use with this command:
