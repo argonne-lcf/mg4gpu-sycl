@@ -116,3 +116,11 @@ The following optional environment variables can be set to modify the behavior o
     - `oneapi`: Uses a complex number implementation from Intel's oneAPI Math Kernel Library.
     - `thrust`: Uses a complex number implementation from the Thrust parallel algorithms library.
     - `syclcplx`: Uses a [complex number implementation developed at the Argonne Leadership Computing Facility](https://github.com/argonne-lcf/SyclCPLX). 
+
+To set an environment variable, use the following command in a terminal window:
+
+```
+export VARIABLE_NAME=value
+```
+
+Replace `VARIABLE_NAME` with the name of the environment variable you want to set and `value` with the value you want to assign to the variable.
